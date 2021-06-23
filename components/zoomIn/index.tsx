@@ -55,7 +55,7 @@ ZoomIn.defaultProps = {
   triggerOnce: true,
   duration: 0.5,
   delay: 0.2,
-  easing: [0.92, 0.48, 0.05, 1],
+  easing: 'easeIn',
 };
 
 export default React.memo(ZoomIn, IsEqual);
