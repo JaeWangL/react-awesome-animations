@@ -1,7 +1,7 @@
 import DayJS from 'dayjs';
 import React, { useEffect, useMemo } from 'react';
 import IsEqual from 'react-fast-compare';
-import { motion, useAnimation, AnimatePresence, Transition, Variants } from 'framer-motion';
+import { motion, useAnimation, Transition, Variants } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const wordStyles: React.CSSProperties = {
@@ -67,24 +67,22 @@ function FlowText(props: FlowTextProps): JSX.Element {
   );
 
   return (
-    <AnimatePresence>
-      <motion.p ref={ref} animate={controls} initial="hidden" variants={letterContainerVariants}>
-        {text.split(' ').map((word: string) => (
-          <div key={DayJS().valueOf()} style={wordStyles}>
-            {Array.from(word).map((letter) => (
-              <motion.span
-                key={DayJS().valueOf()}
-                style={spanStyles}
-                transition={letterTransition}
-                variants={letterVariants}>
-                {letter === ' ' ? '\u00A0' : letter}
-              </motion.span>
-            ))}
-            {'\u00A0'}
-          </div>
-        ))}
-      </motion.p>
-    </AnimatePresence>
+    <motion.p ref={ref} animate={controls} initial="hidden" variants={letterContainerVariants}>
+      {text.split(' ').map((word: string) => (
+        <div key={DayJS().valueOf()} style={wordStyles}>
+          {Array.from(word).map((letter) => (
+            <motion.span
+              key={DayJS().valueOf()}
+              style={spanStyles}
+              transition={letterTransition}
+              variants={letterVariants}>
+              {letter === ' ' ? '\u00A0' : letter}
+            </motion.span>
+          ))}
+          {'\u00A0'}
+        </div>
+      ))}
+    </motion.p>
   );
 }
 
