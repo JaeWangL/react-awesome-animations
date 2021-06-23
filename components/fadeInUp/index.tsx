@@ -3,23 +3,28 @@ import React, { useEffect, useMemo } from 'react';
 import IsEqual from 'react-fast-compare';
 import { useInView } from 'react-intersection-observer';
 
-type FadeInProps = {
+type FadeInUpProps = {
   children: React.ReactNode;
   triggerOnce?: boolean;
   duration?: number;
   delay?: number;
+  yOffset?: number;
+  easing?: number[];
 };
 
-function FadeIn(props: FadeInProps): JSX.Element {
-  const { children, delay, duration, triggerOnce } = props;
+function FadeInUp(props: FadeInUpProps): JSX.Element {
+  const { children, delay, duration, easing, triggerOnce, yOffset } = props;
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce,
+    threshold: 0.1,
   });
 
   useEffect(() => {
     if (inView) {
       controls.start('visible');
+    } else {
+      controls.start('hidden');
     }
   }, [controls, inView]);
 
@@ -27,14 +32,19 @@ function FadeIn(props: FadeInProps): JSX.Element {
     () => ({
       duration,
       delay,
+      ease: easing,
     }),
-    [delay, duration],
+    [delay, duration, easing],
   );
 
   const variants: Variants = useMemo(
     () => ({
-      hidden: { opacity: 0 },
-      visible: { opacity: 1 },
+      hidden: { y: yOffset, opacity: 0 },
+      visible: {
+        y: 0,
+        x: 0,
+        opacity: 1,
+      },
     }),
     [],
   );
@@ -46,10 +56,12 @@ function FadeIn(props: FadeInProps): JSX.Element {
   );
 }
 
-FadeIn.defaultProps = {
-  triggerOnce: false,
+FadeInUp.defaultProps = {
+  triggerOnce: true,
   duration: 0.5,
   delay: 0.2,
+  yOffset: 50,
+  easing: [0.42, 0, 0.58, 1],
 };
 
-export default React.memo(FadeIn, IsEqual);
+export default React.memo(FadeInUp, IsEqual);

@@ -1,47 +1,44 @@
 import React from 'react';
 import IsEqual from 'react-fast-compare';
-import { FadeIn } from '@components/index';
+import { FadeInUp } from '@components/index';
 import { Container, TestBox } from './styles';
 
 function Home(): JSX.Element {
   return (
     <Container>
-      <FadeIn>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
+      </FadeInUp>
+      <FadeInUp>
         <TestBox />
-      </FadeIn>
-      <FadeIn>
-        <TestBox />
-      </FadeIn>
+      </FadeInUp>
     </Container>
   );
 }

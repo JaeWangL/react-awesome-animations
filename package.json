@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 4000",
     "lint:eslint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "lint:eslint:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix",
     "prettify": "prettier --write **/*.{ts,tsx,js,jsx,md,json,yaml,yml}",
