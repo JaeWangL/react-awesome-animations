@@ -49,7 +49,7 @@ function FadeIn(props: FadeInProps): JSX.Element {
 }
 
 FadeIn.defaultProps = {
-  triggerOnce: false,
+  triggerOnce: true,
   duration: 0.5,
   delay: 0.2,
 };
