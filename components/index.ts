@@ -5,3 +5,4 @@ export { default as FadeInRight } from './fadeInRight';
 export { default as FadeInUp } from './fadeInUp';
 export { default as FlipIn } from './flipIn';
 export { default as FlowText } from './flowText';
+export { default as ZoomOut } from './zoomOut';
