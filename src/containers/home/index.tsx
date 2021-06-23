@@ -1,44 +1,38 @@
 import React from 'react';
 import IsEqual from 'react-fast-compare';
-import { ZoomOut } from '@components/index';
+import { ZoomIn } from '@components/index';
 import { Container, TestBox } from './styles';
 
 function Home(): JSX.Element {
   return (
     <Container>
-      <ZoomOut>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
+      </ZoomIn>
+      <ZoomIn>
         <TestBox />
-      </ZoomOut>
-      <ZoomOut>
-        <TestBox />
-      </ZoomOut>
-      <ZoomOut>
-        <TestBox />
-      </ZoomOut>
+      </ZoomIn>
     </Container>
   );
 }
